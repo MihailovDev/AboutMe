@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="myName" type="com.example.aboutme.MyName"/>
+    </data>
+    <LinearLayout
+
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/top_margin_16"
+            android:paddingEnd="@dimen/top_margin_16"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+
+        <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={myName.name}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/name_style"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/hint"
+                style="@style/name_style"
+                android:ems="10"
+                android:id="@+id/edit"/>
+        <Button
+                android:layout_gravity="center"
+                android:text="@string/done"
+
+                android:textColor="@android:color/white"
+                android:layout_marginTop="@dimen/top_margin_16"
+                android:background="@color/colorAccent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/done_btn"/>
+        <TextView
+                android:text="@={myName.nickname}"
+                style="@style/name_style"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nickname"/>
+        <ImageView
+                android:layout_marginTop="@dimen/top_margin_16"
+                android:contentDescription="@string/cont_descr_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/btn_star_big_on"
+                android:id="@+id/star_image"/>
+        <ScrollView android:layout_width="match_parent"
+                    android:id="@+id/scroll"
+                    android:layout_height="match_parent">
+            <TextView android:layout_width="match_parent"
+                      android:id="@+id/bio"
+                      android:lineSpacingMultiplier="1.2"
+                      android:text="@string/about_me_bio"
+                      style="@style/name_style"
+                      android:textAlignment="viewStart"
+                      android:layout_height="wrap_content"/>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>
